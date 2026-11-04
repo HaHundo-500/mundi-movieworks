@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- TEXTURE LAB: a test page for the texture packs. Not in the menu.
+     Copy any panel's data-... settings onto a block on a real page. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texture Lab — Mundi Movieworks</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-page="lab">
+  <div class="site">
+    <header class="site-header" id="site-header"></header>
+    <nav class="site-nav" id="site-nav" aria-label="Main menu"></nav>
+
+    <main class="site-main">
+      <h1 class="page-title">Texture Lab</h1>
+      <p>Placeholder textures: noise made by script, dither and stipple made from your photos. Swap in your own captures by changing the file path.</p>
+
+      <section class="block">
+        <ul class="lab">
+          <li>
+            <div class="lab-panel" data-texture="media/textures/noise/noise-fine-01.png" data-scale="2" data-fps="12" data-opacity="0.45"><span>Fine noise, crackling</span></div>
+            <p class="note">CCD-style grain. Soft scaling.</p>
+            <code>data-texture="media/textures/noise/noise-fine-01.png" data-scale="2" data-fps="12" data-opacity="0.45"</code>
+          </li>
+          <li>
+            <div class="lab-panel" data-texture="media/textures/noise/noise-blocky-01.png" data-scale="14" data-render="pixelated" data-fps="8" data-opacity="0.5"><span>Blocky noise</span></div>
+            <p class="note">Tiny tile scaled up with hard pixels.</p>
+            <code>data-texture="media/textures/noise/noise-blocky-01.png" data-scale="14" data-render="pixelated" data-fps="8" data-opacity="0.5"</code>
+          </li>
+          <li>
+            <div class="lab-panel" data-texture="media/textures/noise/noise-blocky-01.png" data-scale="10" data-stretch="4x1" data-render="pixelated" data-fps="6" data-opacity="0.5"><span>Blocky, stretched 4×1</span></div>
+            <p class="note">Same tile, stretched to its own shape.</p>
+            <code>data-texture="media/textures/noise/noise-blocky-01.png" data-scale="10" data-stretch="4x1" data-render="pixelated" data-fps="6" data-opacity="0.5"</code>
+          </li>
+          <li>
+            <div class="lab-panel" data-texture="media/textures/noise/noise-jpg-01.png" data-scale="4" data-render="pixelated" data-fps="5" data-opacity="0.55"><span>JPG crunch</span></div>
+            <p class="note">Re-saved at very low quality.</p>
+            <code>data-texture="media/textures/noise/noise-jpg-01.png" data-scale="4" data-render="pixelated" data-fps="5" data-opacity="0.55"</code>
+          </li>
+          <li>
+            <div class="lab-panel" data-texture="media/textures/noise/noise-scan-01.png" data-scale="2" data-stretch="3x1" data-fps="10" data-opacity="0.6"><span>Scanner smear</span></div>
+            <p class="note">Noise dragged along one axis.</p>
+            <code>data-texture="media/textures/noise/noise-scan-01.png" data-scale="2" data-stretch="3x1" data-fps="10" data-opacity="0.6"</code>
+          </li>
+          <li>
+            <div class="lab-panel" data-texture="media/textures/noise/noise-tape-01.png" data-scale="2" data-fps="9" data-opacity="0.7"><span>Tape dropouts</span></div>
+            <p class="note">Horizontal dropouts and a tracking band.</p>
+            <code>data-texture="media/textures/noise/noise-tape-01.png" data-scale="2" data-fps="9" data-opacity="0.7"</code>
+          </li>
+          <li>
+            <div class="lab-panel" data-texture="media/textures/noise/noise-loop-01.webm" data-render="pixelated" data-opacity="0.35"><span>Noise video loop</span></div>
+            <p class="note">3-second loop, stretched to the block.</p>
+            <code>data-texture="media/textures/noise/noise-loop-01.webm" data-render="pixelated" data-opacity="0.35"</code>
+          </li>
+          <li>
+            <div class="lab-panel" data-texture="media/textures/dither/dither-atkinson-lights-01.png" data-fit="cover" data-render="pixelated" data-opacity="0.9" data-blend="normal"><span>Dither, Atkinson</span></div>
+            <p class="note">Your light-trails photo, 1-bit, Mac-style dither.</p>
+            <code>data-texture="media/textures/dither/dither-atkinson-lights-01.png" data-fit="cover" data-render="pixelated" data-opacity="0.9" data-blend="normal"</code>
+          </li>
+          <li>
+            <div class="lab-panel" data-texture="media/textures/dither/dither-ordered-lights-01.png" data-fit="cover" data-render="pixelated" data-opacity="0.9" data-blend="normal"><span>Dither, ordered</span></div>
+            <p class="note">Same photo, regular Bayer grid.</p>
+            <code>data-texture="media/textures/dither/dither-ordered-lights-01.png" data-fit="cover" data-render="pixelated" data-opacity="0.9" data-blend="normal"</code>
+          </li>
+          <li>
+            <div class="lab-panel" data-texture="media/textures/stipple/stipple-theatre-01.png" data-fit="cover" data-opacity="0.95" data-blend="normal"><span>Stipple</span></div>
+            <p class="note">Your theatre photo as dots.</p>
+            <code>data-texture="media/textures/stipple/stipple-theatre-01.png" data-fit="cover" data-opacity="0.95" data-blend="normal"</code>
+          </li>
+          <li>
+            <div class="lab-panel" data-texture="moire" data-lines="3" data-opacity="0.6" data-blend="normal"><span>Moiré, live</span></div>
+            <p class="note">Move your mouse over it.</p>
+            <code>data-texture="moire" data-lines="3" data-opacity="0.6" data-blend="normal"</code>
+          </li>
+          <li>
+            <div class="lab-panel" data-texture="media/textures/dither/dither-atkinson-lights-01.png" data-fit="cover" data-render="pixelated" data-opacity="0.8" data-blend="normal"><div class="lab-panel" style="border:0;width:100%;height:100%" data-texture="media/textures/noise/noise-blocky-01.png" data-scale="12" data-render="pixelated" data-fps="8" data-opacity="0.35"><span>Layered: dither + noise</span></div></div>
+            <p class="note">Textures can stack: a panel inside a panel.</p>
+            <code>outer: data-texture="media/textures/dither/dither-atkinson-lights-01.png" data-fit="cover" data-render="pixelated" data-opacity="0.8" data-blend="normal"
+inner: data-texture="media/textures/noise/noise-blocky-01.png" data-scale="12" data-render="pixelated" data-fps="8" data-opacity="0.35"</code>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <aside class="site-margin" aria-label="Notes"></aside>
+    <footer class="site-footer" id="site-footer"></footer>
+  </div>
+
+  <script src="js/site.js"></script>
+  <script src="js/textures.js"></script>
+</body>
+</html>
