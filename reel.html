@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reel — Mundi Movieworks</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-page="reel">
+  <div class="site">
+    <header class="site-header" id="site-header"></header>
+    <nav class="site-nav" id="site-nav" aria-label="Main menu"></nav>
+
+    <main class="site-main">
+      <h1 class="page-title" data-phonemic="ɹiːl">Reel</h1>
+
+      <section class="block">
+        <!-- Placeholder: 2022 showreel. Swap the src when the new reel is ready. -->
+        <div class="player" id="reel-player">
+          <video class="reel-video" controls preload="metadata" playsinline poster="media/reel/showreel-2022-poster.jpg">
+          <source src="media/reel/showreel-2022.mp4" type="video/mp4">
+        </video>
+        </div>
+        <p><button type="button" id="fullscreen">Full screen</button></p>
+      </section>
+    </main>
+
+    <aside class="site-margin" aria-label="Notes">
+      <div class="glyph" data-symbol="">[ symbol ]</div>
+    </aside>
+
+    <footer class="site-footer" id="site-footer"></footer>
+  </div>
+
+  <script src="js/site.js"></script>
+  <script src="js/phonemic.js"></script>
+  <script src="js/scenes.js"></script>
+  <script>
+    // Full-screen button for the reel
+    document.getElementById('fullscreen').addEventListener('click', () => {
+      document.getElementById('reel-player').requestFullscreen?.();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* =========================================================
+   theme.css — THE LOOK. Dark mode.
+   Layout lives in base.css; this file only changes how it looks.
+   Change the tokens in section 1 to restyle the whole site.
+   ========================================================= */
+
+/* Fonts from Google Fonts.
+   Libertinus Serif is included because Libertinus Mono has no IPA
+   characters — it quietly fills in ʃ ə ɹ etc. in phonemic text. */
+@import url("https://fonts.googleapis.com/css2?family=Libertinus+Mono&family=Libertinus+Serif:ital@0;1&family=IBM+Plex+Sans+Condensed:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+
+/* ---------- 1. TOKENS ---------- */
+:root {
+  color-scheme: dark;
+
+  /* Colour */
+  --bg:         #0f0e0d;  /* soot: page background */
+  --bg-raised:  #181614;  /* panels, video frames, placeholders */
+  --text:       #e4dfd4;  /* bone: main text */
+  --muted:      #8f897e;  /* dates, captions, notes */
+  --line:       #2e2a26;  /* borders */
+  --line-faint: #221f1c;  /* dividers between list items */
+  --accent:     #b5573c;  /* rubric red — like red ink in manuscripts. Use rarely. */
+
+  /* Type */
+  --font-display:  "Libertinus Mono", "Libertinus Serif", ui-monospace, monospace;
+  --font-body:     "IBM Plex Sans Condensed", "Arial Narrow", sans-serif;
+  --font-phonemic: "Libertinus Serif", Georgia, serif;
+
+  /* Type sizes (one scale, used everywhere) */
+  --size-small: .8125rem;
+  --size-body:  1.0625rem;
+  --size-h3:    1.25rem;
+  --size-h2:    1.75rem;
+  --size-h1:    clamp(2.25rem, 5vw, 3.5rem);
+}
+
+/* ---------- 2. PAGE ---------- */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  line-height: 1.6;
+}
+::selection { background: var(--accent); color: var(--bg); }
+:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+html { scrollbar-color: var(--line) var(--bg); }
+
+a { color: var(--text); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--accent); }
+
+/* ---------- 3. TITLES (display font) ---------- */
+h1, h2, h3,
+.intro-title, .page-title, .block-title, .site-logo {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+}
+.intro-title, .page-title { font-size: var(--size-h1); line-height: 1.05; }
+.block-title { font-size: var(--size-h2); line-height: 1.15; }
+h3 { font-size: var(--size-h3); }
+
+/* Phonemic text: switch fully to the IPA-capable serif */
+[data-phonemic].is-phonemic { font-family: var(--font-phonemic); }
+
+/* Dates and timestamps read like a log */
+time { font-family: var(--font-display); color: var(--muted); font-size: var(--size-small); }
+
+/* ---------- 4. FRAME: header, menu, footer ---------- */
+.intro { border-bottom-color: var(--line); }
+.intro-mark { border-color: var(--line); color: var(--muted); }
+
+.site-header { border-bottom-color: var(--line); }
+.site-logo { font-size: 1.125rem; text-decoration: none; }
+
+.site-nav a {
+  font-family: var(--font-display);
+  text-decoration: none;
+  color: var(--muted);
+}
+.site-nav a:hover { color: var(--text); }
+.site-nav a[aria-current="page"] { color: var(--text); font-weight: 400; }
+.site-nav a[aria-current="page"]::before { content: "› "; color: var(--accent); }
+
+.site-footer { border-top-color: var(--line); color: var(--muted); font-size: var(--size-small); }
+.site-footer a { color: var(--muted); }
+
+/* ---------- 5. BLOCKS ---------- */
+.log-entry, .credit, .service { border-top-color: var(--line-faint); }
+.credit small, .note, .scene figcaption { color: var(--muted); }
+.credit > span:last-child { font-family: var(--font-display); font-size: var(--size-small); color: var(--muted); }
+
+/* Placeholders and media frames */
+.scene, .player, .work-thumb, .photo, .intro-mark {
+  background: var(--bg-raised);
+  border-color: var(--line);
+}
+.layer, .work-thumb, .photo, .glyph { color: var(--muted); font-family: var(--font-display); }
+.glyph { border-color: var(--line); }
+
+.work a { text-decoration: none; }
+.work-name { font-family: var(--font-display); }
+.work a:hover .work-thumb { border-color: var(--accent); }
+
+button {
+  font: inherit; font-family: var(--font-display);
+  color: var(--text); background: transparent;
+  border: 1px solid var(--line); padding: 4px 12px; cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+
+.ascii { font-family: var(--font-display); color: var(--muted); }

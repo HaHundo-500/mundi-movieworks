@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundi Movieworks</title>
+  <meta name="description" content="Mundi Movieworks — video production and live streaming, Melbourne.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-page="home">
+
+  <!-- ================= INTRO =================
+       Home page only. Logo + title fill the screen first;
+       js/intro.js will later shrink them into the header on scroll. -->
+  <section class="intro" data-intro>
+    <!-- Placeholder logo: Fool's Cap Map (c. 1590), recoloured to the site palette -->
+    <img class="intro-mark" src="media/logo/foolscap-mark.jpg" alt="">
+    <h1 class="intro-title" data-phonemic="ˈmʊndi ˈmuːviwɜːks">Mundi Movieworks</h1>
+  </section>
+
+  <div class="site">
+
+    <!-- ================= HEADER (filled in by js/site.js) ================= -->
+    <header class="site-header" id="site-header"></header>
+
+    <!-- ================= MENU (filled in by js/site.js) ================= -->
+    <nav class="site-nav" id="site-nav" aria-label="Main menu"></nav>
+
+    <!-- ================= MAIN COLUMN ================= -->
+    <main class="site-main">
+
+      <!-- BLOCK: log — dated updates, newest first.
+           To add one, copy an <article class="log-entry"> and paste it at the top. -->
+      <section class="block" id="log">
+        <h2 class="block-title" data-phonemic="ˈæɹəvəlz">Arrivals</h2>
+
+        <article class="log-entry">
+          <time datetime="2026-11-04">2026.11.04</time>
+          <h3 data-phonemic="ˈsaɪt ˈəʉpənz">Site opens</h3>
+          <p>First version of the Mundi Movieworks site. Reel arriving soon.</p>
+        </article>
+
+        <article class="log-entry">
+          <time datetime="2026-11-01">2026.11.01</time>
+          <h3 data-phonemic="ˈɹæf ˈkʌt">Rough cut</h3>
+          <p>Rough cut of the 2026 reel done.</p>
+        </article>
+      </section>
+
+      <!-- BLOCK: scene — a video built from layers that materialise in order.
+           data-order: lower numbers arrive first (background → foreground). -->
+      <section class="block" id="featured">
+        <h2 class="block-title" data-phonemic="ˈʃəʉɹiːl">Showreel</h2>
+        <!-- Placeholder: 2022 showreel. Swap the src when the new reel is ready. -->
+        <div class="player">
+          <video class="reel-video" controls preload="metadata" playsinline poster="media/reel/showreel-2022-poster.jpg">
+          <source src="media/reel/showreel-2022.mp4" type="video/mp4">
+        </video>
+        </div>
+        <p><a href="reel.html">Watch the full reel →</a></p>
+      </section>
+
+      <!-- BLOCK: works — a grid of "folders" linking to sections -->
+      <section class="block" id="index">
+        <h2 class="block-title" data-phonemic="ˈɪndeks">Index</h2>
+        <ul class="works">
+          <li class="work"><a href="reel.html"><span class="work-thumb">[ thumb ]</span><span class="work-name">Reel</span></a></li>
+          <li class="work"><a href="services.html"><span class="work-thumb">[ thumb ]</span><span class="work-name">Services</span></a></li>
+          <li class="work"><a href="credits.html"><span class="work-thumb">[ thumb ]</span><span class="work-name">Credits</span></a></li>
+          <li class="work"><a href="about.html"><span class="work-thumb">[ thumb ]</span><span class="work-name">About</span></a></li>
+          <li class="work"><a href="contact.html"><span class="work-thumb">[ thumb ]</span><span class="work-name">Contact</span></a></li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- ================= MARGIN COLUMN =================
+         Marginalia: symbols, notes, small ASCII. Hidden on phones. -->
+    <aside class="site-margin" aria-label="Notes">
+      <div class="glyph" data-symbol="eye">[ symbol ]</div>
+      <p class="note">Last updated <time datetime="2026-11-04">2026.11.04</time></p>
+    </aside>
+
+    <!-- ================= FOOTER (filled in by js/site.js) ================= -->
+    <footer class="site-footer" id="site-footer"></footer>
+  </div>
+
+  <script src="js/site.js"></script>
+  <script src="js/intro.js"></script>
+  <script src="js/phonemic.js"></script>
+  <script src="js/scenes.js"></script>
+</body>
+</html>
