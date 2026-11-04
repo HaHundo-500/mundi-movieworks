@@ -1,0 +1,19 @@
+{
+  // Run from VS Code: Terminal > Run Task... > Publish site
+  // Saves every change, pulls anything new from GitHub, then pushes.
+  // Netlify publishes automatically about a minute after the push.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Publish site",
+      "type": "shell",
+      "command": "git add . && (git commit -m \"Site update %date% %time:~0,5%\" || ver>nul) && git pull --no-edit && git push",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": { "executable": "cmd.exe", "args": ["/d", "/c"] }
+      },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    }
+  ]
+}
