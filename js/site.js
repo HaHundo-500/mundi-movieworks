@@ -24,7 +24,8 @@ const FOOTER = `
 // ---- Build them (no need to edit below) ----
 const current = document.body.dataset.page;
 
-document.getElementById('site-header').innerHTML = HEADER;
+const header = document.getElementById('site-header');
+if (header && !header.children.length) header.innerHTML = HEADER;
 document.getElementById('site-footer').innerHTML = FOOTER;
 document.getElementById('site-nav').innerHTML =
   '<ul>' +
