@@ -122,13 +122,23 @@ img.photo { width: 100%; height: auto; object-fit: cover; }
   position: absolute; inset: -50%;
   background: repeating-linear-gradient(0deg, currentColor 0 1px, transparent 1px var(--gap, 3px));
 }
-.texture-layer.is-moire i + i { transform: rotate(var(--turn, 2deg)) scale(var(--zoom, 1)); }
+.texture-layer.is-moire i { transform: translateY(var(--pa, 0px)) scaleY(var(--sa, 1)); }
+.texture-layer.is-moire i + i {
+  /* second grid: slightly wider spacing, so the two grids beat against each other into bands */
+  background: repeating-linear-gradient(0deg, currentColor 0 1px, transparent 1px var(--gap2, 3.4px));
+  transform: translateY(var(--pb, 0px)) rotate(var(--turn, 2deg)) scale(var(--zoom, 1)) scaleY(var(--sb, 1));
+}
 
 /* Texture lab test page */
 .lab { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
 .lab-panel { aspect-ratio: 4 / 3; border: 1px solid #999; display: grid; place-items: end start; padding: 10px; }
 .lab-panel span { font-size: .8rem; }
 .lab code { display: block; margin-top: 6px; font-size: .72rem; line-height: 1.4; white-space: pre-wrap; word-break: break-all; color: #888; }
+
+/* ---------- PIXELATE (used by js/pixelate.js) ---------- */
+.has-pixelate > :not(.pixelate-layer) { position: relative; z-index: 1; }   /* content above the image */
+.pixelate-layer { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.pixelate-layer canvas { position: sticky; top: 0; display: block; width: 100%; height: 100vh; max-height: 100%; }
 
 /* ---------- 4. PHONES: everything stacks into one column ---------- */
 @media (max-width: 800px) {

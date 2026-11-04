@@ -13,16 +13,42 @@
   <!-- ================= INTRO =================
        Home page only. Logo + title fill the screen first;
        js/intro.js will later shrink them into the header on scroll. -->
-  <section class="intro" data-intro>
+  <!-- Cover image, broken into blocks that shift as you scroll (js/pixelate.js).
+       data-amount = break-up when still (0-1), data-burst = extra break-up while scrolling,
+       data-blob = size of the blob shapes, data-cell = grid size, data-dim = darken (0-1),
+       data-twinkle = patches that flick into JPG blocks per second while still (0 = off),
+       data-settle = seconds to return to sharp after you stop scrolling,
+       data-focus = radius around the mouse that turns sharp (0 = off),
+       data-focus-hold = seconds a spot stays sharp after the mouse passes,
+       data-mouse-clear = px of mouse movement that wipes the pixelation away (smaller = faster, 0 = off) -->
+  <section class="intro" data-intro
+    data-pixelate="media/stills/20231217_034014.jpg"
+    data-amount="0"
+    data-burst="0.5"
+    data-settle="15"
+    data-focus="48"
+    data-focus-hold="3"
+    data-mouse-clear="900"
+    data-blob="420"
+    data-cell="24"
+    data-twinkle="2">
     <!-- Placeholder logo: Fool's Cap Map (c. 1590), recoloured to the site palette -->
     <img class="intro-mark" src="media/logo/foolscap-mark.jpg" alt="">
     <h1 class="intro-title" data-phonemic="ˈmʊndi ˈmuːviwɜːks">Mundi Movieworks</h1>
   </section>
 
-  <div class="site">
-
-    <!-- ================= HEADER (filled in by js/site.js) ================= -->
-    <header class="site-header" id="site-header"></header>
+  <!-- Page background: same effect, darkened. (The background set in css/base.css shows if this can't run.) -->
+  <div class="site"
+    data-pixelate="media/stills/20231217_033849 (1).jpg"
+    data-dim="0.75"
+    data-amount="0"
+    data-burst="0.6"
+    data-settle="15"
+    data-focus="48"
+    data-focus-hold="3"
+    data-mouse-clear="900"
+    data-blob="520"
+    data-twinkle="1.5">
 
     <!-- ================= MENU (filled in by js/site.js) ================= -->
     <nav class="site-nav" id="site-nav" aria-label="Main menu"></nav>
@@ -90,5 +116,7 @@
   <script src="js/intro.js"></script>
   <script src="js/phonemic.js"></script>
   <script src="js/scenes.js"></script>
+  <script src="js/textures.js"></script>
+  <script src="js/pixelate.js"></script>
 </body>
 </html>
