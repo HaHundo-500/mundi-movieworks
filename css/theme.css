@@ -14,13 +14,13 @@
   color-scheme: dark;
 
   /* Colour */
-  --bg:         #0f0e0d;  /* soot: page background */
+  --bg:         #1b1b1b;  /* Eerie Black: page background */
   --bg-raised:  #181614;  /* panels, video frames, placeholders */
   --text:       #e4dfd4;  /* bone: main text */
   --muted:      #8f897e;  /* dates, captions, notes */
-  --line:       #2e2a26;  /* borders */
+  --line:       #6D7C7A;  /* granite: outlines and borders */
   --line-faint: #221f1c;  /* dividers between list items */
-  --accent:     #b5573c;  /* rubric red — like red ink in manuscripts. Use rarely. */
+  --accent:     #123524;  /* phthalo green. Use rarely. */
 
   /* Type */
   --font-display:  "Libertinus Mono", "Libertinus Serif", ui-monospace, monospace;
@@ -112,3 +112,8 @@ button {
 button:hover { border-color: var(--accent); }
 
 .ascii { font-family: var(--font-display); color: var(--muted); }
+
+/* Texture lab */
+.lab-panel { border-color: var(--line); background: var(--bg); color: var(--text); }
+.lab-panel span { font-family: var(--font-display); background: var(--bg); padding: 0 6px; }
+.lab code { color: var(--muted); font-family: var(--font-display); }
